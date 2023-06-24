@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Define a compatibilidade com o Internet Explorer, forçando-o a usar a versão mais recente.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagens/logoicon.png" type="image/png">
+    <title>Pati Zorzi - Loja Feminina</title>
+    <link rel="stylesheet" href="css/style01.css">
+    <style>   
+        footer {
+            text-align: center;
+            margin-top: 20px;
+          }
+  </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="imagens/logoicon.png" alt="Logo da loja">
+        </div>
+        <div>
+            <nav id="menu-h">
+                <ul>
+                    <br>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="coleções.html">Coleções</a></li>
+                      <li><a href="outlet.html">Outlet</a></li>
+                      <li><a href="eventos.html">Eventos</a></li>
+                      <li><a href="conheça.html">Conheça a Loja</a></li>
+                      
+                    </ul>
+            </nav>
+        </div>
+        <div class="music">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3RKWf9LdRdngA9NaXlzuNA?utm_source=generator&theme=0" width="100%" height="132" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </header>
+    <section class="hero-banner">
+        <h1>Pati Zorzi</h1>
+        <p>Agradando mulheres de todos os estilos e silhuetas!</p>
+    </section>
+    <section class="product-categories">    
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item"><img src="imagens/index-images/001.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/002.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/003.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/004.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/005.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/006.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/007.jpeg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/008.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/009.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/010.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/011.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/012.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/013.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/014.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/015.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/016.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/017.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/018.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/019.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/020.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/021.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/022.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/023.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/024.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/025.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/026.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/027.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/028.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/029.jpg"></div>
+                <div class="carousel-item"><img src="imagens/index-images/030.jpg"></div>
+            </div>
+            <button class="prev"><</button>
+            <button class="next">></button>
+        </div>
+    </section>
+    <script>
+        const carouselContainer = document.querySelector('.carousel-container');
+        const carousel = document.querySelector('.carousel');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        let currentPosition = 0;
+        const numVisibleItems = 5; // Número de imagens visíveis desejadas
+        const numItemsToSkip = 5; // Número de itens a pular
+
+        let itemWidth = 0;
+
+        function adjustCarouselSize() {
+          const containerWidth = carouselContainer.offsetWidth;
+          itemWidth = containerWidth / numVisibleItems;
+
+          carousel.style.width = `${carouselItems.length * itemWidth}px`;
+          carouselItems.forEach(item => {
+          item.style.width = `${itemWidth}px`;
+          });
+
+          goToPosition(currentPosition);
+          }
+
+  function goToPosition(position) {
+    carousel.style.transform = `translateX(-${position * itemWidth}px)`;
+  }
+
+  function goToNextPosition() {
+    currentPosition += numItemsToSkip;
+
+    if (currentPosition >= carouselItems.length) {
+      currentPosition = currentPosition % carouselItems.length;
+    }
+
+    goToPosition(currentPosition);
+  }
+
+  function goToPrevPosition() {
+    currentPosition -= numItemsToSkip;
+
+    if (currentPosition < 0) {
+      currentPosition = (currentPosition + carouselItems.length) % carouselItems.length;
+    }
+
+    goToPosition(currentPosition);
+  }
+  
+  window.addEventListener('resize', adjustCarouselSize);
+  prevButton.addEventListener('click', goToPrevPosition);
+  nextButton.addEventListener('click', goToNextPosition);
+
+  adjustCarouselSize();
+</script>
+
+   
+<footer class="footer"> <!--Comando para inserir Rodapé-->
+  <div class="rede-sociais">
+      <a href="https://instagram.com/patizorzimodas_?igshid=MzRlODBiNWFlZA==">
+      <img src="imagens/instaicon.png"  width="75" height="75" alt="Siga nossa página no Instagram" title="Siga nossa página no Instagram"></a>
+      <a href="https://api.whatsapp.com/send/?phone=5517991109915&text=Ol%C3%A1+Pati%2C+tenho+interesse+em+uma+pe%C3%A7a+&type=phone_number&app_absent=0">
+      <img src="imagens/whatsicon.png"  width="75" height="75" alt="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp"></a>
+  </div>
+  <p>&copy; <span id="year"></span> Pati Zorzi. Todos os Direitos Reservados.</p>
+</footer>
+</body>
+</html>

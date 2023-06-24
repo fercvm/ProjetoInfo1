@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagens/logoicon.png" type="image/png">
+    <title>Pati Zorzi - Loja Feminina</title>
+    <link rel="stylesheet" href="css/style01.css">
+    <style>
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .eventos {
+            margin: -2rem 2rem 2rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .eventos p {
+            font-size: 20px;
+            text-align: Justify;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .hero-banner {
+            margin-bottom: 0;
+        }
+	.galeria {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .galeria img {
+            width: 30%; /* Ajuste o tamanho das imagens conforme necessário */
+            height: auto;
+	    aspect-ratio: 3/4; /* Define a proporção de aspecto como 3:4 */
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html"><img src="imagens/logoicon.png" alt="Logo da loja"></a>
+        </div>
+        <div>
+            <nav id="menu-h">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="coleções.html">Coleções</a></li>
+                    <li><a href="outlet.html">Outlet</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="conheça.html">Conheça a Loja</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <h1>1 Ano de Pati Zorzi &#x2764;</h1>
+        <p>Coffee Break de Aniversário</p>
+    </section>
+
+    <section class="eventos">
+        <div class="evento">
+            <p style="text-indent: 1em; line-height: 1.5; color: #363636;">
+                Oi Patis!
+                Neste primeiro ano, enfrentamos desafios, aprendemos lições valiosas e celebramos conquistas significativas.<br>
+                Cada visita à nossa loja, cada compra feita e cada sorriso compartilhado conosco nos motivaram a continuar superando as expectativas.
+                Para comemorar esse marco importante, realizamos um incrível coffee break de aniversário, cheio de promoções e sorteios.
+                À medida que avançamos para o próximo capítulo da nossa jornada, queremos garantir a vocês que continuaremos buscando a excelência em tudo o que fazemos.
+                Foi uma oportunidade incrível para agradecer a todos os nossos clientes e parceiros que nos apoiaram nessa jornada.
+            </p>
+            <br>
+            <p style="color: #363636; text-align: center;">Confira as fotos abaixo para ter um gostinho do evento.</p>
+			<br>
+            <div class="galeria">
+                <img src="imagens/eventos/035.jpg" alt="Foto do evento">
+                <img src="imagens/eventos/036.jpg" alt="Foto do evento">
+                <img src="imagens/eventos/037.jpg" alt="Foto do evento">
+            </div>
+        </div>
+	<br>
+           <p style="color: #363636; margin: 0 auto;"> Mais uma vez, obrigada do fundo dos nossos corações. Vocês são a inspiração que nos impulsiona a crescer, evoluir e realizar nossos sonhos. 
+    </section>
+
+    <script src="js/carousel.js"></script>
+    <footer class="footer"> <!--Comando para inserir Rodapé-->
+        <div class="rede-sociais">
+            <a href="https://instagram.com/patizorzimodas_?igshid=MzRlODBiNWFlZA==">
+            <img src="imagens/instaicon.png"  width="75" height="75" alt="Siga nossa página no Instagram" title="Siga nossa página no Instagram"></a>
+            <a href="https://api.whatsapp.com/send/?phone=5517991109915&text=Ol%C3%A1+Pati%2C+tenho+interesse+em+uma+pe%C3%A7a+&type=phone_number&app_absent=0">
+            <img src="imagens/whatsicon.png"  width="75" height="75" alt="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp"></a>
+        </div>
+        <p>&copy; <span id="year"></span> Pati Zorzi. Todos os Direitos Reservados.</p>
+    </footer>
+    <script> <!--Comando JS para atualizar o ano automaticamente-->
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
